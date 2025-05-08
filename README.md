@@ -33,7 +33,6 @@ This project helps you understand the foundation of user sessions, CRUD logic, a
 - 🔐 Login & Logout using Django Sessions
 - 🔐 CSRF Protection
 - ➕ Add Products (Name, Price, Description, etc.)
-- 🗂️ View Product List (per user)
 - ✏️ Edit Product Details
 - ❌ Delete Products with Confirmation
 - 📊 Basic Styling with HTML/CSS
@@ -46,15 +45,18 @@ This project helps you understand the foundation of user sessions, CRUD logic, a
 
 - **Frontend**: HTML5, CSS3
 - **Backend**: Django (Python)
-- **Database**: SQLite (can be switched to MySQL/PostgreSQL)
+- **Database**: SQLite 
 - **Authentication**: Django's built-in user model
-- **Others**: Django Forms, Django Templates, Bootstrap (optional)
+- **Others**: Django Forms, Django Templates, 
 
 ---
 output
 
 
-https://github.com/user-attachments/assets/a5f35abf-d969-4e11-8df0-5874129ef20a
+
+https://github.com/user-attachments/assets/2f7a157b-96ae-4fa1-9ff3-1b1d00ca39be
+
+
 
 
 
