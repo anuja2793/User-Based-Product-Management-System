@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Products</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 500px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #ff6f61;
+      font-size: 24px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.3s ease;
+    }
+
+    input:focus {
+      border-color: #ff6f61;
+      box-shadow: 0 0 6px rgba(255, 111, 97, 0.4);
+      outline: none;
+    }
+
+    button {
+      background-color: #ff6f61;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #e8574b;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+      font-size: 14px;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 5px;
+      color: #ff6f61;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .content p {
+      color: #d32f2f;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Update PRODUCTS - Here</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label>Product Name</label>
+      <input type="text" id="name" name="name"  value="{{i.name}}"/>
+      <label>Product Description</label>
+      <input type="text" id="description" name="description"value="{{i.description}}" />
+      <label>Product Price</label>
+      <input type="number" id="price" name="price" value="{{i.price}}"/>
+      <label>Product Offer</label>
+      <input type="text" id="offer" name="offer" value="{{i.offer}}"/>
+      <button type="submit">update</button>
+    </form>
+    <p>OR</p>
+    <a href="{% url 'home' %}">Cancel</a>
+    <div class="content">
+      {% for msg in messages %}
+      <p>{{ msg }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

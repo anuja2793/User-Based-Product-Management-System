@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Customer Registration</title>
+        <style>
+            /* Reset default margin & padding */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(120deg, #e0f7fa, #80deea);
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+    
+            .container {
+                background-color: #ffffff;
+                padding: 40px 30px;
+                border-radius: 15px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                width: 100%;
+                max-width: 400px;
+            }
+    
+            h1 {
+                text-align: center;
+                margin-bottom: 30px;
+                color: #00796b;
+            }
+    
+            form {
+                display: flex;
+                flex-direction: column;
+            }
+    
+            label {
+                margin-bottom: 8px;
+                font-weight: 600;
+                color: #444;
+            }
+    
+            input[type="text"],
+            input[type="password"] {
+                padding: 12px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                font-size: 15px;
+                transition: border 0.3s;
+            }
+    
+            input:focus {
+                border-color: #00796b;
+                outline: none;
+            }
+    
+            button {
+                padding: 12px;
+                background-color: #00796b;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+    
+            button:hover {
+                background-color: #004d40;
+            }
+    
+            p {
+                text-align: center;
+                margin-top: 20px;
+                color: #555;
+            }
+    
+            a {
+                display: block;
+                text-align: center;
+                margin-top: 8px;
+                color: #00796b;
+                text-decoration: none;
+                font-weight: 500;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+    
+            .content p {
+                color: #d32f2f;
+                font-weight: bold;
+                text-align: center;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    
+<body>
+    <div class="container">
+    <h1>Customers Registration Form</h1>
+    <form method="post">
+        {% csrf_token %}
+            <label>UserName</label>
+            <input type="text" id="username" name="username" >
+            <label>Password</label>
+            <input type="password" id="password" name="password">
+            <button type="submit">REGISTER</button>
+        
+    </form>
+    <p>OR</p>
+    <a href="{% url 'login' %}">Account Already Exists Click Login</a>
+    <div class="content">
+        {% for msg in messages%}
+        <p>{{msg}}</p>
+        {% endfor %}
+    </div>
+    </div>
+    
+
+</body>
+</html>
